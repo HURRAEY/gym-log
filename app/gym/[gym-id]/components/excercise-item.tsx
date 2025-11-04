@@ -13,6 +13,7 @@ import { ChangeEvent, useCallback, useState } from "react";
 export const ExerciseItem = ({ exercise }: { exercise: Excercise }) => {
   const [exerciseForm, setExerciseForm] = useState(exercise);
 
+  //weight 입력
   const handleWeightInput = useCallback(
     ({ value, index }: { value: string; index: number }) => {
       exerciseForm.exerciseSets[index].weight = Number(value);
@@ -23,6 +24,7 @@ export const ExerciseItem = ({ exercise }: { exercise: Excercise }) => {
     [exerciseForm]
   );
 
+  //reps 입력
   const handleRepsInput = useCallback(
     ({ value, index }: { value: string; index: number }) => {
       exerciseForm.exerciseSets[index].reps = Number(value);
@@ -43,7 +45,7 @@ export const ExerciseItem = ({ exercise }: { exercise: Excercise }) => {
         <FieldGroup>
           {exerciseForm.exerciseSets.map((exerciseSet, index) => {
             return (
-              <FieldSet>
+              <FieldSet key={exerciseSet.index}>
                 <div className="flex gap-4">
                   <Field>
                     <Input
@@ -60,6 +62,9 @@ export const ExerciseItem = ({ exercise }: { exercise: Excercise }) => {
                       type="number"
                       placeholder="Reps"
                       value={exerciseSet.reps}
+                      onChange={(e) => {
+                        handleRepsInput({ value: e.target.value, index });
+                      }}
                     />
                   </Field>
                 </div>
