@@ -15,10 +15,6 @@ export default function Gym() {
       {gymLog.excercises.map((excercise) => {
         return <ExerciseItem key={excercise.id} exercise={excercise} />;
       })}
-
-      <div className="flex w-full my-4">
-        <Button className="w-full h-12 text-2xl font-bold ">+</Button>
-      </div>
     </>
   );
 }
