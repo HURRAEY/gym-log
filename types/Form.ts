@@ -1,6 +1,6 @@
-export interface ExerciseFormData = {
+export interface ExerciseFormData {
   exerciseSets: Array<{
     weight: number;
     reps: number;
   }>;
-};
+}
