@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Excercise } from "@/types/gym";
-import { ExerciseFormData } from "@/types/Form";
+import { ExerciseFormData } from "@/types/form";
 import { useForm, useFieldArray, DefaultValues } from "react-hook-form";
 
 export const ExerciseItem = ({ exercise }: { exercise: Excercise }) => {
