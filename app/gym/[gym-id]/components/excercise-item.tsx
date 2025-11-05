@@ -9,11 +9,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Excercise } from "@/types/gym";
 import { ExerciseFormData } from "@/types/form";
-import { useForm, useFieldArray, DefaultValues } from "react-hook-form";
+import { useForm, useFieldArray } from "react-hook-form";
 
 export const ExerciseItem = ({ exercise }: { exercise: Excercise }) => {
   const { register, control, handleSubmit } = useForm<ExerciseFormData>({
-    DefaultValues: {
+    defaultValues: {
       exerciseSets: exercise.exerciseSets.map((set) => ({
         weight: set.weight,
         reps: set.reps,
